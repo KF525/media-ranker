@@ -1,0 +1,8 @@
+Add Movie
+
+<%= form_for @movie, url: {action: "create"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.text_field :director %>
+  <%= f.submit "Add Movie" %>
+<% end %>

@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
 
-  
+  #Movie Routes
+  get "movies", to: "movies#index", as: :movies
+  get "movies/new", to: "movies#new", as: :add_movie
+  post "movies/new", to: "movies#create"
+  get "movies/:id", to: "movies#show", as: :show_movie
+  get "movies/:id/edit", to: "movies#edit", as: :edit_movie
+  patch "movies/:id/edit", to: "movies#update"
+  delete "movies/:id/destroy", to: "movies#destroy", as: :delete_movie
+  #this should probably point to a global thing?
+  patch "movies/:id/upvote", to: "movies#upvote", as: :upvote
+
+  root "home#index"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
