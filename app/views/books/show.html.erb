@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Ranking</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @book.rank %></td>
+        <td><%= @book.name %></td>
+        <td><%= @book.description %></td>
+        <td><%= @book.author %></td>
+      </tr>
+  </tbody>
+</table>
+
+<div>
+<%= link_to "Upvote", upvote_book_path, :method => :patch %>
+<%= link_to "Edit", edit_book_path %>
+<%= link_to "Delete", delete_book_path, :method => :delete %>
+<%= link_to "View All Movies", books_path %>
+<%= link_to "View All Media", root_path %>
+</div>
