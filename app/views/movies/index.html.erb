@@ -1,0 +1,9 @@
+
+<% @movies.each do |movie| %>
+  <%= movie.rank %>
+  <%= link_to movie.name, "/movies/#{movie.id}" %>
+<% end %>
+
+
+<%= link_to "View All Media", root_path %>
+<%= link_to "Add New Movie", add_movie_path %>

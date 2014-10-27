@@ -1,0 +1,13 @@
+
+  <%= @movie.rank %>
+  <%= @movie.name %>
+  <%= @movie.description %>
+  <%= @movie.director %>
+
+<div>
+<%= link_to "Upvote", upvote_path, :method => :patch %>
+<%= link_to "Edit", edit_movie_path %>
+<%= link_to "Delete", delete_movie_path, :method => :delete %>
+<%= link_to "View All Movies", movies_path %>
+<%= link_to "View All Media", root_path %>
+</div>
