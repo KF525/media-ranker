@@ -1,11 +1,24 @@
-
-  <%= @movie.rank %>
-  <%= @movie.name %>
-  <%= @movie.description %>
-  <%= @movie.director %>
+<table>
+  <thead>
+    <tr>
+      <th>Ranking</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Director</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @movie.rank %></td>
+        <td><%= @movie.name %></td>
+        <td><%= @movie.description %></td>
+        <td><%= @movie.director %></td>
+      </tr>
+  </tbody>
+</table>
 
 <div>
-<%= link_to "Upvote", upvote_path, :method => :patch %>
+<%= link_to "Upvote", upvote_movie_path, :method => :patch %>
 <%= link_to "Edit", edit_movie_path %>
 <%= link_to "Delete", delete_movie_path, :method => :delete %>
 <%= link_to "View All Movies", movies_path %>

@@ -1,15 +1,26 @@
 Rails.application.routes.draw do
 
   #Movie Routes
-  get "movies", to: "movies#index", as: :movies
-  get "movies/new", to: "movies#new", as: :add_movie
-  post "movies/new", to: "movies#create"
-  get "movies/:id", to: "movies#show", as: :show_movie
-  get "movies/:id/edit", to: "movies#edit", as: :edit_movie
-  patch "movies/:id/edit", to: "movies#update"
-  delete "movies/:id/destroy", to: "movies#destroy", as: :delete_movie
+  get "movies",                 to: "movies#index",       as: :movies
+  get "movies/new",             to: "movies#new",         as: :add_movie
+  post "movies/new",            to: "movies#create"
+  get "movies/:id",             to: "movies#show",        as: :show_movie
+  get "movies/:id/edit",        to: "movies#edit",        as: :edit_movie
+  patch "movies/:id/edit",      to: "movies#update"
+  delete "movies/:id/destroy",  to: "movies#destroy",     as: :delete_movie
   #this should probably point to a global thing?
-  patch "movies/:id/upvote", to: "movies#upvote", as: :upvote
+  patch "movies/:id/upvote",    to: "movies#upvote",      as: :upvote_movie
+
+  #Book Routes
+  get "books",                  to: "books#index",        as: :books
+  get "books/new",              to: "books#new",          as: :add_book
+  post "books/new",             to: "books#create"
+  get "books/:id",              to: "books#show",         as: :show_book
+  get "books/:id/edit",         to: "books#edit",        as: :edit_book
+  patch "books/:id/edit",       to: "books#update"
+  delete "books/:id/destroy",   to: "books#destroy",     as: :delete_book
+  patch "books/:id/upvote",     to: "books#upvote",       as: :upvote_book
+
 
   root "home#index"
 
