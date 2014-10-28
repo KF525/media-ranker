@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     @books = Book.all
     @books_array = @books.sort { |a, b| a.rank <=> b.rank }
 
-    @albums = Rank.all
+    @albums = Album.all
     @albums_array = @albums.sort { |a, b| a.rank <=> b.rank }
   end
 
