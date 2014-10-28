@@ -1,5 +1,5 @@
 
-<% @movies.each do |movie| %>
+<% @movies_array.reverse.each do |movie| %>
   <%= movie.rank %>
   <%= link_to movie.name, "/movies/#{movie.id}" %>
 <% end %>

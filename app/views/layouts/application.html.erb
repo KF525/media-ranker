@@ -5,10 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <!-- width of the content should be the width of the device: -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<header>
+  <h1>Media Ranker</h1>
+</header>
 <body>
 
+  <div class="container">
+    <div class="row">
+
+      <!--<div class="sidebar col-md-2 col-sm-6">
+        <h2>Sidebar</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>-->
+
+      <div class="main col-md-12 col-sm-12">
 <%= yield %>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>

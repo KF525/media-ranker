@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Ranking</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Artist</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @album.rank %></td>
+        <td><%= @album.name %></td>
+        <td><%= @album.description %></td>
+        <td><%= @album.artist %></td>
+      </tr>
+  </tbody>
+</table>
+
+<div>
+<%= button_to "Upvote", upvote_album_path, method: :patch %>
+<%= link_to "Edit", edit_album_path %>
+<%= button_to "Delete", delete_album_path, method: :delete %>
+<%= link_to "View All Albums", albums_path %>
+<%= link_to "View All Media", root_path %>
+</div>

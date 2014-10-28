@@ -1,18 +1,26 @@
-<% @movies.each do |movie| %>
-  <%= movie.rank %>
-  <%= link_to movie.name, "/movies/#{movie.id}" %>
-<% end %>
-
-
-<%= link_to "View All Movies", movies_path %>
-
-
-
-<% @books.each do |book| %>
-  <%= book.rank %>
-  <%= link_to book.name, "/books/#{book.id}" %>
-<% end %>
-
-
-<%= link_to "View All Media", root_path %>
-<%= link_to "Add New Book", add_book_path %>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Movies</h2>
+    <% @movies_array.each do |movie| %>
+      <%= movie.rank %>
+      <%= link_to movie.name, "/movies/#{movie.id}" %><br/>
+    <% end %>
+    <div><%= link_to "View All Movies", movies_path %></div>
+  </div>
+  <div class="col-md-4">
+    <h2>Books</h2>
+    <% @books_array.each do |book| %>
+      <%= book.rank %>
+      <%= link_to book.name, "/books/#{book.id}" %><br/>
+    <% end %>
+    <div><%= link_to "Add New Book", add_book_path %></div>
+  </div>
+  <div class="col-md-4">
+    <h2>Albums</h2>
+    <% @albums_array.each do |album| %>
+      <%= album.rank %>
+      <%= link_to album.name, "/albums/#{album.id}" %><br/>
+    <% end %>
+    <div><%= link_to "Add New Album", add_album_path %></div>
+  </div>
+</div>
