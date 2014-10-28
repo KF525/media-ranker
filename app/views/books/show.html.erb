@@ -18,9 +18,9 @@
 </table>
 
 <div>
-<%= link_to "Upvote", upvote_book_path, :method => :patch %>
+<%= button_to "Upvote", upvote_book_path, method: :patch %>
 <%= link_to "Edit", edit_book_path %>
-<%= link_to "Delete", delete_book_path, :method => :delete %>
+<%= button_to "Delete", delete_book_path, method: :delete %>
 <%= link_to "View All Movies", books_path %>
 <%= link_to "View All Media", root_path %>
 </div>

@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @books_array = @books.sort { |a, b| a.rank <=> b.rank }
   end
 
   def new

@@ -1,5 +1,5 @@
 
-<% @books.each do |book| %>
+<% @books_array.reverse.each do |book| %>
   <%= book.rank %>
   <%= link_to book.name, "/books/#{book.id}" %>
 <% end %>

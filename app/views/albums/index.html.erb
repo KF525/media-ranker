@@ -1,0 +1,9 @@
+
+<% @albums_array.reverse.each do |album| %>
+  <%= album.rank %>
+  <%= link_to album.name, "/albums/#{album.id}" %>
+<% end %>
+
+
+<%= link_to "View All Media", root_path %>
+<%= link_to "Add New Album", add_album_path %>

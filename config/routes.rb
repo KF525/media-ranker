@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "movies/:id/edit",        to: "movies#edit",        as: :edit_movie
   patch "movies/:id/edit",      to: "movies#update"
   delete "movies/:id/destroy",  to: "movies#destroy",     as: :delete_movie
-  #this should probably point to a global thing?
   patch "movies/:id/upvote",    to: "movies#upvote",      as: :upvote_movie
 
   #Book Routes
@@ -16,11 +15,20 @@ Rails.application.routes.draw do
   get "books/new",              to: "books#new",          as: :add_book
   post "books/new",             to: "books#create"
   get "books/:id",              to: "books#show",         as: :show_book
-  get "books/:id/edit",         to: "books#edit",        as: :edit_book
+  get "books/:id/edit",         to: "books#edit",         as: :edit_book
   patch "books/:id/edit",       to: "books#update"
-  delete "books/:id/destroy",   to: "books#destroy",     as: :delete_book
+  delete "books/:id/destroy",   to: "books#destroy",      as: :delete_book
   patch "books/:id/upvote",     to: "books#upvote",       as: :upvote_book
 
+  #Albums
+  get "albums",                 to: "albums#index",       as: :albums
+  get "albums/new",             to: "albums#new",         as: :add_album
+  post "albums/new",            to: "albums#create"
+  get "albums/:id",             to: "albums#show",        as: :show_album
+  get "albums/:id/edit",        to: "albums#edit",        as: :edit_album
+  patch "albums/:id/edit",      to: "albums#update"
+  delete "albums/:id/destroy",  to: "albums#delete",      as: :delete_album
+  patch "albums/:id/upvote",    to: "albums#upvote",      as: :upvote_album
 
   root "home#index"
 
