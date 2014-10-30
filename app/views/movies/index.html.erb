@@ -1,9 +1,24 @@
+<h2>All The Movies<span class="glyphicon glyphicon-film"></span></h2>
+  <table class="table-condensed table-bordered">
+    <thead class="table-head">
+      <tr>
+        <th>Ranking</th>
+        <th>Title</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <% @movies_array.each do |movie| %>
+    <tbody>
+        <tr>
+          <td class="rank"><span class="badge"><%= movie.rank %></span></td>
+          <td><%= link_to movie.name, "/movies/#{movie.id}" %></td>
+          <td><%= button_to "Upvote", upvote_movie_path(movie.id), method: :patch, class: "btn btn-default" %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
 
-<% @movies_array.reverse.each do |movie| %>
-  <%= movie.rank %>
-  <%= link_to movie.name, "/movies/#{movie.id}" %>
-<% end %>
-
-
-<%= link_to "View All Media", root_path %>
-<%= link_to "Add New Movie", add_movie_path %>
+<div class="links">
+  <%= link_to "Add New Movie", add_movie_path %>
+  <%= link_to "View All Media", root_path %>
+</div>

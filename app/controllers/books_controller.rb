@@ -1,8 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
-    @books_array = @books.sort { |a, b| a.rank <=> b.rank }
+    @books_array = Book.all_rank_reverse
   end
 
   def new
@@ -26,7 +25,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(params.require(:book).permit(:name, :description, :author))
-      redirect_to show_book_path
+      redirect_to book_path
     else
       render :edit
     end

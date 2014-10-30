@@ -1,8 +1,4 @@
-Add Book
 
-<%= form_for @book, url: {action: "update"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_area :description %>
-  <%= f.text_field :author %>
-  <%= f.submit "Update Book" %>
-<% end %>
+<h2>Edit <%=@book.name %></h2>
+
+<%= render "book_form" %>

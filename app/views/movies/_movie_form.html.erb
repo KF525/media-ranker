@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= form_for @movie do |f| %>
+  <div class="col-md-10">
+    <%= f.text_field :name, placeholder: "title", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @movie, col: :name %>
+  </div>
+  <div class="col-md-10">
+    <%= f.text_area :description, placeholder: "description", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @movie, col: :description %>
+  </div>
+  <div class="col-md-10">
+    <%= f.text_field :director, placeholder: "director", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @movie, col: :director %>
+  <div>
+  <div class="col-md-12">
+    <%= f.submit class: "btn-group btn btn-default form-button" %>
+  </div>
+  <% end %>
+</div>

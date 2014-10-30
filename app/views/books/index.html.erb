@@ -1,9 +1,25 @@
+<h2>All The Books<span class="glyphicon glyphicon-book"></span></h2>
 
-<% @books_array.reverse.each do |book| %>
-  <%= book.rank %>
-  <%= link_to book.name, "/books/#{book.id}" %>
-<% end %>
+  <table class="table-condensed table-bordered">
+    <thead class="table-head">
+      <tr>
+        <th>Ranking</th>
+        <th>Title</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <% @books_array.each do |book| %>
+    <tbody>
+        <tr>
+          <td class="rank"><span class="badge"><%= book.rank %></span></td>
+          <td><%= link_to book.name, "/books/#{book.id}" %></td>
+          <td><%= button_to "Upvote", upvote_book_path(book.id), method: :patch, class: "btn btn-default" %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
 
-
-<%= link_to "View All Media", root_path %>
-<%= link_to "Add New Book", add_book_path %>
+  <div class="links">
+    <%= link_to "Add New Book", add_book_path %>
+    <%= link_to "View All Media", root_path %>
+  </div>

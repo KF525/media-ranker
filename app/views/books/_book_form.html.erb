@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= form_for @book do |f| %>
+  <div class="col-md-10">
+    <%= f.text_field :name, placeholder: "title", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @book, col: :name %>
+  </div>
+  <div class="col-md-10">
+    <%= f.text_area :description, placeholder: "description", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @book, col: :description %>
+  </div>
+  <div class="col-md-10">
+    <%= f.text_field :author, placeholder: "author", class: "form-control" %>
+    <%= render "shared/error_messages", obj: @book, col: :author %>
+  <div>
+  <div class="col-md-12">
+    <%= f.submit class: "btn-group btn btn-default form-button" %>
+  </div>
+  <% end %>
+</div>
