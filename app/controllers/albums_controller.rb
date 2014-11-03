@@ -1,8 +1,7 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.all
-    @albums_array = @albums.sort { |a, b| a.rank <=> b.rank }
+    @albums_array = Album.all_rank_reverse
   end
 
   def new
@@ -29,8 +28,8 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if @album.update(params.require(:album).permit(:name, :description, :artist))
-      redirect_to show_album_path
+    if @album.update(params.require(:album).permit(:name, :description, :artist, :rank))
+      redirect_to album_path
     else
       render :edit
     end
@@ -39,9 +38,9 @@ class AlbumsController < ApplicationController
   def delete
     @album = Album.find(params[:id])
     if @album.destroy
-      redirect to albums_path
+      redirect_to albums_path
     else
-      redirect_to show_album_path
+      redirect_to album_path
     end
   end
 
@@ -51,7 +50,7 @@ class AlbumsController < ApplicationController
     if @album.save
       redirect_to albums_path
     else
-      redirect_to show_album_path
+      redirect_to album_path
     end
   end
 end

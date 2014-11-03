@@ -1,14 +1,11 @@
 class HomeController < ApplicationController
 
   def index
-    @movies = Movie.all
-    @movies_array = @movies.sort { |a, b| a.rank <=> b.rank }
+    @top_five_movies = Movie.top_five
 
-    @books = Book.all
-    @books_array = @books.sort { |a, b| a.rank <=> b.rank }
+    @top_five_books = Book.top_five
 
-    @albums = Rank.all
-    @albums_array = @albums.sort { |a, b| a.rank <=> b.rank }
+    @top_five_albums = Album.top_five
   end
 
 end

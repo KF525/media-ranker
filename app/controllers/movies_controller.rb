@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
-    @movies_array = @movies.sort { |a, b| a.rank <=> b.rank }
+    @movies_array = Movie.all_rank_reverse
   end
 
   def new
@@ -29,8 +28,8 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    if @movie.update(params.require(:movie).permit(:name, :description, :director))
-      redirect_to show_movie_path
+    if @movie.update(params.require(:movie).permit(:name, :description, :director, :rank))
+      redirect_to movie_path
     else
       render :new
     end
@@ -41,7 +40,7 @@ class MoviesController < ApplicationController
     if @movie.destroy
       redirect_to movies_path
     else
-      redirect_to show_movie_path
+      redirect_to movie_path
     end
   end
 
@@ -52,7 +51,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
-      redirect_to show_movie_path
+      redirect_to movie_path
     end
   end
 end

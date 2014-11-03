@@ -1,0 +1,19 @@
+  <div class="form-group">
+    <%= form_for @album do |f| %>
+    <div class="col-md-10">
+      <%= f.text_field :name, placeholder: "title", class: "form-control" %>
+      <%= render "shared/error_messages", obj: @album, col: :name %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_area :description, placeholder: "description", class: "form-control" %>
+      <%= render "shared/error_messages", obj: @album, col: :description %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_field :artist, placeholder: "artist", class: "form-control" %>
+      <%= render "shared/error_messages", obj: @album, col: :artist %>
+    <div>
+    <div class="col-md-12">
+      <%= f.submit class: "btn-group btn btn-default form-button" %>
+    </div>
+    <% end %>
+  </div>

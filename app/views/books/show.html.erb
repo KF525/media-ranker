@@ -1,26 +1,28 @@
-<table>
-  <thead>
-    <tr>
-      <th>Ranking</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="table-responsive">
+  <table class="table-condensed table-bordered">
+    <thead class="table-head">
       <tr>
-        <td><%= @book.rank %></td>
-        <td><%= @book.name %></td>
-        <td><%= @book.description %></td>
-        <td><%= @book.author %></td>
+        <th>Ranking</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Author</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="rank"><span class="badge"><%= @book.rank %></span></td>
+          <td><%= @book.name %></td>
+          <td><%= @book.description %></td>
+          <td><%= @book.author %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
 
-<div>
-<%= button_to "Upvote", upvote_book_path, method: :patch %>
-<%= link_to "Edit", edit_book_path %>
-<%= button_to "Delete", delete_book_path, method: :delete %>
-<%= link_to "View All Movies", books_path %>
-<%= link_to "View All Media", root_path %>
+<div class="btn-group">
+  <%= render "shared/upvote", object: @book %>
+  <%= link_to "Edit", edit_book_path, class: "btn btn-default"  %>
+  <%= button_to "Delete", delete_book_path, method: :delete, class: "btn btn-default"  %>
+  <%= link_to "View All Books", books_path, class: "view-link"  %>
+  <%= link_to "View All Media", root_path, class: "view-link"  %>
 </div>

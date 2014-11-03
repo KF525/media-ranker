@@ -14,14 +14,101 @@
  *= require_self
  */
 
+body {
+  background-color: #ededed;
+}
+
 .main {
   background-color: #ededed;
 }
 
 h1 {
-  color: #ededed;
+  color: #FA4542;
+  text-align:right;
+  background-color: #444;
+  padding: .5%;
+  padding-right: 4%;
+  font-family: "Raleway";
 }
 
 h2 {
   color: #444;
+  text-align: center;
+}
+
+h1 a:hover {
+  color: #ffffff;
+}
+
+a {
+  color: #FA4542;
+  padding: 0 2% 0 0;
+}
+
+a:hover {
+  color: #444;
+  text-decoration: none;
+}
+
+.links {
+  text-align: center;
+  margin-top: 5%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-group {
+  display: block;
+  padding: 2%;
+}
+
+.btn-group a {
+  float: right;
+}
+
+.btn-default {
+  float: left;
+}
+
+.btn-default:hover{
+  color: #FA4542;
+}
+
+
+.table-head {
+  background-color: #ffffff;
+  color: #FA4542;
+}
+
+.rank {
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-control {
+  margin: 2% 0;
+}
+
+.form-button {
+  float: right;
+  margin-top: 10%;
+}
+
+.home-button {
+  margin: 5% 0;
+}
+
+.home-column {
+  line-height: 200%;
+}
+
+.glyphicon {
+  padding: 2%
+}
+
+.error-messages {
+  color: #FA4542;
 }

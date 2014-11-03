@@ -3,30 +3,30 @@ Rails.application.routes.draw do
   #Movie Routes
   get "movies",                 to: "movies#index",       as: :movies
   get "movies/new",             to: "movies#new",         as: :add_movie
-  post "movies/new",            to: "movies#create"
-  get "movies/:id",             to: "movies#show",        as: :show_movie
+  post "movies",                to: "movies#create"
+  get "movies/:id",             to: "movies#show",        as: :movie
   get "movies/:id/edit",        to: "movies#edit",        as: :edit_movie
-  patch "movies/:id/edit",      to: "movies#update"
+  patch "movies/:id",           to: "movies#update"
   delete "movies/:id/destroy",  to: "movies#destroy",     as: :delete_movie
   patch "movies/:id/upvote",    to: "movies#upvote",      as: :upvote_movie
 
   #Book Routes
   get "books",                  to: "books#index",        as: :books
   get "books/new",              to: "books#new",          as: :add_book
-  post "books/new",             to: "books#create"
-  get "books/:id",              to: "books#show",         as: :show_book
+  post "books",                 to: "books#create"
+  get "books/:id",              to: "books#show",         as: :book
   get "books/:id/edit",         to: "books#edit",         as: :edit_book
-  patch "books/:id/edit",       to: "books#update"
+  patch "books/:id",            to: "books#update"
   delete "books/:id/destroy",   to: "books#destroy",      as: :delete_book
   patch "books/:id/upvote",     to: "books#upvote",       as: :upvote_book
 
-  #Albums
+  #Albums Routes
   get "albums",                 to: "albums#index",       as: :albums
   get "albums/new",             to: "albums#new",         as: :add_album
-  post "albums/new",            to: "albums#create"
-  get "albums/:id",             to: "albums#show",        as: :show_album
+  post "albums",                to: "albums#create"
+  get "albums/:id",             to: "albums#show",        as: :album
   get "albums/:id/edit",        to: "albums#edit",        as: :edit_album
-  patch "albums/:id/edit",      to: "albums#update"
+  patch "albums/:id",           to: "albums#update"
   delete "albums/:id/destroy",  to: "albums#delete",      as: :delete_album
   patch "albums/:id/upvote",    to: "albums#upvote",      as: :upvote_album
 

@@ -1,9 +1,25 @@
+<h2>All The Albums<span class="glyphicon glyphicon-music"></span></h2>
 
-<% @albums_array.reverse.each do |album| %>
-  <%= album.rank %>
-  <%= link_to album.name, "/albums/#{album.id}" %>
-<% end %>
+  <table class="table-condensed table-bordered">
+    <thead class="table-head">
+      <tr>
+        <th>Ranking</th>
+        <th>Title</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <% @albums_array.each do |album| %>
+    <tbody>
+        <tr>
+          <td class="rank"><span class="badge"><%= album.rank %></span></td>
+          <td><%= link_to album.name, "/albums/#{album.id}" %></td>
+          <td><%= render "shared/upvote", object: album %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
 
-
-<%= link_to "View All Media", root_path %>
-<%= link_to "Add New Album", add_album_path %>
+<div class="links">
+  <%= link_to "Add New Album", add_album_path %>
+  <%= link_to "View All Media", root_path %>
+</div>

@@ -1,26 +1,28 @@
-<table>
-  <thead>
-    <tr>
-      <th>Ranking</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Director</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="table-responsive">
+  <table class="table-condensed table-bordered">
+    <thead class="table-head">
       <tr>
-        <td><%= @movie.rank %></td>
-        <td><%= @movie.name %></td>
-        <td><%= @movie.description %></td>
-        <td><%= @movie.director %></td>
+        <th>Ranking</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Director</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="rank"><span class="badge"><%= @movie.rank %></span></td>
+          <td><%= @movie.name %></td>
+          <td><%= @movie.description %></td>
+          <td><%= @movie.director %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
 
-<div>
-<%= button_to "Upvote", upvote_movie_path, method: :patch %>
-<%= link_to "Edit", edit_movie_path %>
-<%= button_to "Delete", delete_movie_path, method: :delete %>
-<%= link_to "View All Movies", movies_path %>
-<%= link_to "View All Media", root_path %>
+<div class="btn-group">
+  <%= render "shared/upvote", object: @movie %>
+  <%= link_to "Edit", edit_movie_path, class: "btn btn-default"  %>
+  <%= button_to "Delete", delete_movie_path, method: :delete, class: "btn btn-default"  %>
+  <%= link_to "View All Albums", movies_path, class: "view-link"  %>
+  <%= link_to "View All Media", root_path, class: "view-link"  %>
 </div>
