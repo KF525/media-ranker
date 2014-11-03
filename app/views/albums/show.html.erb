@@ -20,7 +20,7 @@
 </div>
 
 <div class="btn-group">
-  <%= button_to "Upvote", upvote_album_path, method: :patch, class: "btn btn-default" %>
+  <%= render "shared/upvote", object: @album %>
   <%= link_to "Edit", edit_album_path, class: "btn btn-default"  %>
   <%= button_to "Delete", delete_album_path, method: :delete, class: "btn btn-default"  %>
   <%= link_to "View All Albums", albums_path, class: "view-link"  %>

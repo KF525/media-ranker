@@ -13,7 +13,7 @@
         <tr>
           <td class="rank"><span class="badge"><%= book.rank %></span></td>
           <td><%= link_to book.name, "/books/#{book.id}" %></td>
-          <td><%= button_to "Upvote", upvote_book_path(book.id), method: :patch, class: "btn btn-default" %></td>
+          <td><%= render "shared/upvote", object: book %></td>
         </tr>
     </tbody>
     <% end %>

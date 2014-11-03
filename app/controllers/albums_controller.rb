@@ -28,7 +28,7 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if @album.update(params.require(:album).permit(:name, :description, :artist))
+    if @album.update(params.require(:album).permit(:name, :description, :artist, :rank))
       redirect_to album_path
     else
       render :edit

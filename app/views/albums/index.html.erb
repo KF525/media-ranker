@@ -13,7 +13,7 @@
         <tr>
           <td class="rank"><span class="badge"><%= album.rank %></span></td>
           <td><%= link_to album.name, "/albums/#{album.id}" %></td>
-          <td><%= button_to "Upvote", upvote_album_path(album.id), method: :patch, class: "btn btn-default" %></td>
+          <td><%= render "shared/upvote", object: album %></td>
         </tr>
     </tbody>
     <% end %>
